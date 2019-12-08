@@ -1,5 +1,6 @@
 # DQN for Atari
 ![](https://i.imgur.com/RkMH4sO.jpg)
+
 One of my main motivations towards studying Reinfrocement Learning was being able to create an agent that could play atari games (since I was terrible at them). I have implemented DQN before but it was a comparatively very simple task (job scheduling). Playing Atari games is a completely different task (and much diffucult in terms of computational complexity). Even cartpool was so much easier.
 
 I wrote this simple, intuitive and easy to understand DQN implementation in PyTorch a few months ago. Sharing it for others now, if you find any bugs please raise an issue (there must be many).
@@ -17,7 +18,9 @@ Check out `config/config.ini` for the hyperparameters used (mostly taken from ot
 # How to?
 ### Train:
 `git clone https://github.com/TimeTraveller-San/DQN-Atari`
+
 `python train_atari.py`
+
 > How long does it take to train?
 
 On my GTX 1060 6GB, 16 GB RAM and i7 6700k
