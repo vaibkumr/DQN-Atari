@@ -35,6 +35,7 @@ E_EXPLORE_STEPS = conf.getint('E_EXPLORE_STEPS')
 EPS_END = conf.getfloat('EPS_END')
 EPS_START = conf.getfloat('EPS_START')
 SAVE_FEQ = conf.getint('SAVE_FEQ') #Increase this if you dont want your HDD to by full overnight
+PATH = conf.get('PATH')
 
 
 class DQN(object):
@@ -47,7 +48,8 @@ class DQN(object):
         self.memory = ReplayMemory(MEMORY_CAPACITY)
         self.optimizer = torch.optim.Adam(self.policy_new.parameters(), lr=LR)
         self.loss_func = nn.SmoothL1Loss()
-        self.PATH = 'model/'
+        self.PATH = PATH
+        verify_dir(self.PATH)
         self.epsilon = EPS_START
         self.step = 0
 

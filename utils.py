@@ -9,6 +9,7 @@ import pandas as pd
 from collections import namedtuple
 import math
 import random
+import os
 
 def torch_state(state):
     return torch.Tensor(state).permute(0, 3, 1, 2).cuda()
@@ -25,6 +26,10 @@ def preprocess(img):
     i = to_grayscale(downsample(img))
     return i[..., None]
     #numpy notation a[..., None] adds another dimension at the end
+
+def verify_dir(directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
 
 class ReplayMemory(object):
     def __init__(self, capacity):
